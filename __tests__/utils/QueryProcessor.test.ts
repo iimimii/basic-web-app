@@ -25,4 +25,12 @@ describe("QueryProcessor", () => {
             "oh my gosh you found me, yuchingc"
           ));
     });
+
+    test('should answer name', () => {
+        const query = "what is your name?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "mimi"
+          ));
+    });
 });

@@ -33,6 +33,21 @@ export default function QueryProcessor(query: string): string {
     return (x*y).toString();
   }
 
+  const subtractMatch = query.match(/What is (\d+) minus (\d+)/);
+  if (subtractMatch) {
+    const x: number = parseInt(subtractMatch[1]);
+    const y: number = parseInt(subtractMatch[2]);
+    return (x-y).toString();
+  }
+  
+  const maxMatch = query.match(/qWhich of the following numbers is the largest: (\d+), (\d+), (\d+)/);
+  if (maxMatch) {
+    const x: number = parseInt(maxMatch[1]);
+    const y: number = parseInt(maxMatch[2]);
+    const z: number = parseInt(maxMatch[3]);
+    return (Math.max(x, y, z)).toString();
+  }
+
 
   return "";
 }

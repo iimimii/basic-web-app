@@ -43,4 +43,17 @@ describe("QueryProcessor", () => {
         expect(QueryProcessor("What is 89 multiplied by 3?")).toEqual("267");
         expect(QueryProcessor("What is 10 multiplied by 54?")).toEqual("540");
     });
+
+    test('should subtract numbers', () => {
+        expect(QueryProcessor("What is 78 minus 44?")).toEqual("34");
+        expect(QueryProcessor("What is 3 minus 9?")).toEqual("-6");
+    });
+
+    test('should find the largest of the numbers', () => {
+        expect(QueryProcessor("Which of the following numbers is the largest: 28, 22, 78?")).toEqual("78");
+        expect(QueryProcessor("Which of the following numbers is the largest: 81, 58, 20?")).toEqual("81");
+    });
+
+
+
 });
